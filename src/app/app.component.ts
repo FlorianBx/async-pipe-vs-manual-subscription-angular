@@ -1,30 +1,22 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pokemon } from './services/pokemon.service';
 import { PokemonService } from './services/pokemon.service';
-import { Subscription } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit, OnDestroy {
-  pokemons: Pokemon[] = [] ;
-  PokemonSubcription: Subscription | undefined;
+export class AppComponent implements OnInit {
+  pokemons$: Observable<Pokemon[]> | undefined;
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.PokemonSubcription = this.pokemonService.getPokemons().subscribe(pokemon => {
-      this.pokemons = pokemon;
-    })
-  }
-
-  ngOnDestroy(): void {
-    if (this.PokemonSubcription) {
-      this.PokemonSubcription.unsubscribe();
-    }
+    this.pokemons$ = this.pokemonService.getPokemons();
   }
 }
