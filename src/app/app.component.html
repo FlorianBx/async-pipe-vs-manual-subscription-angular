@@ -1,0 +1,9 @@
+<main>
+  <h1>Hello</h1>
+  <p>Congratulations! Your app is running. 🎉</p>
+  @for (pokemon of pokemons; track pokemon.name) {
+    <p>{{ pokemon.name }}</p>
+  } @empty {
+    <p>No Pokemons found</p>
+  }
+</main>
