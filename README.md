@@ -9,7 +9,7 @@ L'objectif est de récupérer et afficher une liste de Pokémon en utilisant un 
 ## Comparaison des Implémentations
 
 Vous pouvez voir la différence entre les deux implémentations en un coup d'œil ici :
-[Voir la comparaison sur GitHub](https://github.com/FlorianBx/async-vs-observer-angular/commit/e3e7e177a31a23120f8252b114f9da8d5ab54c46#diff-884f7f49640e5923f6bcac4c51d90340330a178f662defbe61e5f5aac1c512de)
+[Voir la comparaison sur GitHub](https://github.com/FlorianBx/async-pipe-vs-manual-subscription-angular/commit/e3e7e177a31a23120f8252b114f9da8d5ab54c46#diff-884f7f49640e5923f6bcac4c51d90340330a178f662defbe61e5f5aac1c512de)
 
 ## Approche 1 : Souscription Manuelle
 
